@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+#include <conio.h>
+
+
+void main()
+{
+	int binlik=0;
+	int yuzluk=0;
+	int onluk=0;
+	int birlik=0;
+	int sayi=0;
+	int durum=0;
+	while(durum==0){
+		printf("\nLutfen 4 basamakli bir sayi giriniz: \n");
+		scanf("%d",&sayi);
+
+		if ((sayi>=1000 && sayi<=9999)) 
+		{
+			printf("\nVerilen %d sayisinda",sayi);
+			binlik=abs(sayi/1000);
+			printf("\n%d tane binlik sayi vardir.",binlik);
+			yuzluk=(sayi%1000)/100;
+			printf("\n%d tane yuzluk sayi vardir.",yuzluk);
+			onluk=((sayi)-(binlik*1000)-(yuzluk*100))/10;
+			printf("\n%d tane onluk sayi vardir.",onluk);
+			birlik=((sayi)-(binlik*1000)-(yuzluk*100)-(onluk*10));
+			printf("\n%d tane birlik sayi vardir.",birlik);
+			durum=1;
+
+		}
+		else if((sayi>=-9999 && sayi<=-1000))
+		{
+			sayi=abs(sayi);
+			printf("\nVerilen %d sayisinda",sayi);
+			binlik=abs(sayi/1000);
+			printf("\n%d tane binlik sayi vardir.",binlik);
+			yuzluk=(sayi%1000)/100;
+			printf("\n%d tane yuzluk sayi vardir.",yuzluk);
+			onluk=((sayi)-(binlik*1000)-(yuzluk*100))/10;
+			printf("\n%d tane onluk sayi vardir.",onluk);
+			birlik=((sayi)-(binlik*1000)-(yuzluk*100)-(onluk*10));
+			printf("\n%d tane birlik sayi vardir.",birlik);
+			durum=1;
+		}
+
+
+		else
+		{
+			printf("\nGirmis oldugunuz sayi 4 basamakli bir sayi degildir");
+		}
+	}
+	getch();
+}
